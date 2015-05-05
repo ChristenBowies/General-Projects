@@ -1,0 +1,15 @@
+y(x)=a*x**2+b*x+c
+
+a = 1
+b = 0.1
+c = 1
+
+fit y(x) "data.txt" using 1:2 via a, b, c
+
+set xlabel "input size"
+
+set ylabel "milliseconds"
+
+plot "data.txt" with yerrorbars, y(x)
+
+pause -1
